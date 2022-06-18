@@ -1,0 +1,6 @@
+.hanoiContainer {
+  border: 1px solid blue;
+  min-height: 400px;
+  min-width: 600px;
+  margin: 20px;
+}
