@@ -26,9 +26,10 @@ export const moveDisc = (
 };
 
 export const CreateDiscs = (discs: number): Peg => {
+  console.log(discs);
   let discsArray: string = "";
 
-  if (discs > 3 && discs < 10) {
+  if (discs >= 3 && discs < 10) {
     for (let idx = discs; idx > 0; idx--) {
       discsArray += idx.toString();
     }
