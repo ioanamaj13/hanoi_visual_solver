@@ -1,10 +1,12 @@
 import { DiscItem } from "./disc";
 import styles from "../styles/styles.module.css";
 
-export const HanoiArea = (props: { discs: number }) => {
+export const HanoiArea = (props: { discs: number; message?: string }) => {
   return (
     <div className={styles.hanoiContainer}>
-      {props.discs >= 3 && props.discs < 10 ? (
+      {props.message && props.message.length ? (
+        <span> {props.message} </span>
+      ) : (
         <>
           <div className={styles.hanoiPegContainer}>
             <div className={styles.hanoiPeg}>
@@ -28,8 +30,6 @@ export const HanoiArea = (props: { discs: number }) => {
             </div>
           </div>
         </>
-      ) : (
-        <span> Discs number must be between 3 and 9 </span>
       )}
     </div>
   );

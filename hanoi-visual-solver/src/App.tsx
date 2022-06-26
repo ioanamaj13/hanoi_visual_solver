@@ -7,6 +7,7 @@ import { CreateDiscs } from "./utils/shared";
 function App() {
   const [discs, setDiscs] = useState(0);
   const [drawDiscs, setDrawDiscs] = useState(0);
+  const [message, setMessage] = useState("");
 
   let source = CreateDiscs(drawDiscs);
   let aux: Peg = { name: "Aux", contents: "" };
@@ -17,8 +18,9 @@ function App() {
     setDrawDiscs(discs);
     if (discs > 2 && discs < 10) {
       hanoiSolveInConsole(source, destination, aux, discs);
+      setMessage("");
     } else {
-      alert("Discs number must be between 3 and 9");
+      setMessage("Discs number must be between 3 and 9");
     }
   };
 
@@ -42,7 +44,7 @@ function App() {
     <div className="App">
       <h1> Hanoi towers </h1>
       <UserInput />
-      <HanoiArea discs={drawDiscs} />
+      <HanoiArea discs={drawDiscs} message={message} />
     </div>
   );
 }
