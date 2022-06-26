@@ -15,7 +15,11 @@ function App() {
   const handleSubmit = (event: any) => {
     event.preventDefault();
     setDrawDiscs(discs);
-    hanoiSolveInConsole(source, destination, aux, discs);
+    if (discs > 2 && discs < 10) {
+      hanoiSolveInConsole(source, destination, aux, discs);
+    } else {
+      alert("Discs number must be between 3 and 9");
+    }
   };
 
   const UserInput = () => {

@@ -1,7 +1,7 @@
 import { Peg } from "../types";
 import { moveDisc } from "./shared";
 
-//TODO: check data structure
+//TODO: check data s
 export const hanoiSolveInConsole = function (
   source: Peg,
   destination: Peg,
