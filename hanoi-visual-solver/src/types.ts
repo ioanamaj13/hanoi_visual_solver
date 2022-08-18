@@ -1,6 +1,6 @@
 export type Peg = {
   name: string;
-  contents: string;
+  contents: string[];
 };
 
 export type RecordedMove = {

@@ -7,9 +7,10 @@ export const moveDisc = (
   target: Peg,
   message: string
 ) => {
+  console.log("source", source);
   source.contents = source.contents.slice(0, source.contents.length - 1);
 
-  target.contents += disc.toString();
+  target.contents.push(disc.toString());
 
   //TODO: populate this with the move
   //   moveLog.push({
@@ -27,11 +28,11 @@ export const moveDisc = (
 
 export const CreateDiscs = (discs: number): Peg => {
   console.log(discs);
-  let discsArray: string = "";
+  let discsArray: string[] = [];
 
   if (discs >= 3 && discs < 10) {
     for (let idx = discs; idx > 0; idx--) {
-      discsArray += idx.toString();
+      discsArray.push(idx.toString());
     }
   } else console.log("Discs must be between 3 and 9");
 
